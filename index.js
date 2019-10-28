@@ -1,12 +1,11 @@
-const TwitterBot = require('./twitter-bot.js');
+const twitterBot = require('./twitter-bot.js');
 
-// Initiate Bot
-function BotInit() {
-	TwitterBot.BotRetweet();
+function init() {
+	twitterBot.BotRetweet();
 }
 
-BotInit();
+init();
 
 module.exports = {
-	BotInit,
+	init,
 };

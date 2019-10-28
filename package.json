@@ -1,15 +1,14 @@
 {
-  "name": "100diasdecodigo",
+  "name": "Midia Social",
   "version": "1.0.0",
-  "description": "A simple bot to retweet #100diasdecódigo",
-  "repository": "https://github.com/jcserracampos/100diasdecodigo_bot",
+  "description": "MidiaSocial",
+  "repository": "https://github.com/Acaciano/iris.mediaSocial.listener",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "start": "node index.js"
   },
-  "author": "Júlio Campos <oi@juliocampos.com.br>",
-  "license": "MIT",
+  "author": "Acaciano Neves <acaciano.neves@gmail.com>",
+  "license": "2A",
   "dependencies": {
     "dotenv": "^6.0.0",
     "twit": "^2.2.10"

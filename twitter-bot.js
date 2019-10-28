@@ -1,9 +1,8 @@
-const Twit = require('twit');
+const twit = require('twit');
 
 require('dotenv').config();
 
-/* Configure the Twitter API */
-const Bot = new Twit({
+const Bot = new twit({
 	consumer_key: 'aRqQxR7xe0dkpgonKB3LO7jkG',
 	consumer_secret: 'zuG31sle0OGGoBdLdSA0KEIRAJEQeZ3quB4IyPJsk4rkunSA5M',
 	access_token: '1058050673105952768-slMgPYVJc4ZPH8bHiqIllNnfW3ZD0h',
@@ -11,28 +10,27 @@ const Bot = new Twit({
 	timeout_ms: 60 * 1000,
 });
 
-var TWITTER_SEARCH_PHRASE = '#bolsonaro';
+var twitTER_SEARCH_PHRASE = 'bolsonaro';
 
 console.log('The bot is running...');
 
-/* BotRetweet() : To retweet recent tweets with our query */
 function BotRetweet() {
 	const stream = Bot.stream('statuses/filter', {
-		track: TWITTER_SEARCH_PHRASE,
+		track: twitTER_SEARCH_PHRASE,
 		language: 'pt'
 	});
 
 	stream.on('tweet', tweet => {
 		if(isReply(tweet)) {
-			console.warn('Tweet is a retweet!');
+			console.warn('Ouvindo!');
 		} else {
 			Bot.post('statuses/retweet/:id', {
 				id: tweet.id_str
 			}, (error, response) => {
 				if (error) {
-					console.log('Bot could not retweet, : ' + error);
+					console.log('Bot não pôde retuitar, : ' + error);
 				} else {
-					console.log('Bot retweeted : ' + response.text);
+					console.log('Bot retweetou : ' + response.text);
 				}
 			});
 		}
@@ -49,7 +47,7 @@ function isReply(tweet) {
 	  return true
   }
 
-// Exports
+
 module.exports = {
     Bot,
     BotRetweet,
