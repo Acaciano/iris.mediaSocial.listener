@@ -25,4 +25,4 @@ const tweetSchema = new Schema({
     timestamps: true,
 });
 
-module.exports = model('Tweet', tweetSchema);
+module.exports = model('Tweet', tweetSchema, 'Tweet');
