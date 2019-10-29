@@ -11,6 +11,7 @@
   "license": "2A",
   "dependencies": {
     "dotenv": "^6.0.0",
+    "mongoose": "^5.7.7",
     "twit": "^2.2.10"
   },
   "devDependencies": {

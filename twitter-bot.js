@@ -1,4 +1,5 @@
 const twit = require('twit');
+//const tweetModel = require('models/tweet');
 
 require('dotenv').config();
 
@@ -30,6 +31,10 @@ function BotRetweet() {
 				if (error) {
 					console.log('Bot não pôde retuitar, : ' + error);
 				} else {
+
+					//console.log(response);
+					//await tweetModel.create({});
+
 					console.log('Bot retweetou : ' + response.text);
 				}
 			});
@@ -46,7 +51,6 @@ function isReply(tweet) {
 	  || tweet.in_reply_to_screen_name )
 	  return true
   }
-
 
 module.exports = {
     Bot,
